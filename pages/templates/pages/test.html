@@ -1,0 +1,29 @@
+{% extends "pages/base.html" %}
+
+{% block content %}
+ <div class="container">
+            <div class="jumbotron" style="background-color: white">
+              <h1 class="display-4">My Django Blog Applicatio Testn</h1>
+<!--              <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>-->
+<!--              <hr class="my-4">-->
+<!--              <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>-->
+<!--              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>-->
+            </div>
+        <div class="card-columns">
+            {% for blog_post in published_posts%}
+                <div class="card p-3 m-3 shadow">
+                    <p>{{blog_post.title}}</p>
+                    <img src="{{blog.picture_location.url}}">
+                    <p> Written by {{blog_post.author}} on {{blog_post.timestamp}}</p>
+                    <p>Category: {{blog_post.category}}</p>
+                    <button type="button" class="btn btn-danger">Read Post</button>
+
+                </div>
+             {% endfor %}
+
+        </div>
+
+
+    </div>
+
+{% endblock %}
