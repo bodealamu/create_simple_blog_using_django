@@ -24,5 +24,14 @@ def list_of_categories(request):
     return  render(request=request, template_name="pages/category.html", context=context)
 
 
-def test_view(request):
-    return render(request=request, template_name="pages/test.html", context=None)
+def posts_by_category(request, category_slug):
+    """View that lists the posts which belong to a category."""
+    list_of_posts = Post.objects.all().filter(published=True).filter(category__category_slug=category_slug)
+
+    context = {
+        "list_of_posts":list_of_posts,
+
+    }
+
+    return render(request=request, template_name="pages/posts_by_category.html", context=context)
+

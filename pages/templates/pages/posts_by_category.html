@@ -1,0 +1,20 @@
+{% extends "pages/base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron" style="background-color:white">
+        <h1 class="display-4">Posts</h1>
+    </div>
+    {% for post in list_of_posts %}
+        <div class="card p-3 m-3 shadow">
+          <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <a href="#" class="btn btn-danger">Button</a>
+          </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}
+

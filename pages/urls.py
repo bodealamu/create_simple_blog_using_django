@@ -4,6 +4,6 @@ from pages import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('categories', views.list_of_categories, name='categories'),
-    path('test', views.test_view, name='test')
+    path('categories/<str:category_slug>', views.posts_by_category, name='postlistbycategory'),
 
 ]

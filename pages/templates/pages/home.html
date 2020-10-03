@@ -16,10 +16,20 @@
                 <p>{{blog_post.title}}</p>
                 <img src="{{blog.picture_location.url}}">
                 <p> Written by {{blog_post.author}} on {{blog_post.timestamp}}</p>
-                <p>Category: {{blog_post.category}}</p>
-                <button type="button" class="btn btn-danger">Read Post</button>
+
+                <a href="{% url 'postlistbycategory' category_slug=blog_post.category.category_slug %}"> Category: {{blog_post.category}}</a>
+                <br>
+
+                <div>
+                     <button type="button" class="btn btn-danger">Read Post</button>
+                </div>
+
+
+
+
 
             </div>
+
          {% endfor %}
 
     </div>
