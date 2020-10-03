@@ -35,3 +35,14 @@ def posts_by_category(request, category_slug):
 
     return render(request=request, template_name="pages/posts_by_category.html", context=context)
 
+
+def post_detail(request, blog_slug):
+    """ View function for Blog post detail"""
+    blog_post = Post.objects.get(blog_slug=blog_slug)
+
+    context = {
+        'blog_post':blog_post
+    }
+
+    return render(request=request, context=context, template_name="pages/blog_detail.html")
+

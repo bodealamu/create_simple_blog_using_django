@@ -21,13 +21,8 @@
                 <br>
 
                 <div>
-                     <button type="button" class="btn btn-danger">Read Post</button>
+                     <a href="{% url 'post_content' blog_slug=blog_post.blog_slug %}" class="btn btn-danger">Read post</a>
                 </div>
-
-
-
-
-
             </div>
 
          {% endfor %}
